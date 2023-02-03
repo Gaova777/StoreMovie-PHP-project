@@ -46,52 +46,15 @@ require 'funciones.php';
 
     <div class="container" id="main">
         <div class="row">
-            <?php
-              require 'vendor/autoload.php';
-              $pelicula = new Jdiego\Pelicula;
-
-              $info_peliculas = $pelicula->mostrar();
-              $cantidad = count($info_peliculas);
-              if($cantidad > 0){
-                for($x=0;$x<$cantidad;$x++){
-                  $item=$info_peliculas[$x]
-            ?>
-              <div class="col-md-3">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h1 class="text-center titulo-pelicula"><?php print $item['titulo']?></h1>
-                  </div>
-                  <div class="panel-body">
-                  <?php
-                      $foto= 'upload/'.$item['foto'];
-                      if(file_exists($foto)){
-                      ?>
-                      <img src="<?php print $foto;?>" class="img-responsive">
-                      <?php }else{ ?>
-                        <img src="assets/imagenes/not-found.jpg" class="img-responsive">
-                      
-                      <?php }?>
-                  </div>
-                  <div class="panel-footer">
-                    <a href="carrito.php?id=<?php print $item['id']?>" class="btn btn-success btn-block"><span class="glyphicon glyphicon-shopping-cart"> </span>Comprar</a>
-                  </div>
-                </div>
-              </div>
-
-                
-            <?php
-
-                }
-          
-          }else{?>
-                  <h4>NO HAY REGISTROS</h4>
-
-           <?php } ?>
-            
-
-
-
-
+            <div class="jumbotron">
+                <p>Gracias por su compra</p>
+                <p>
+                    <a href="index.php">Regresar</a>
+                </p>
+                <p>
+                    <a href="panel/index.php" class="btn btn-primary">Ver Compra</a>
+                </p>
+            </div>
         </div>
       
 
